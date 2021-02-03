@@ -5,12 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.css']
 })
-export class CoursesComponent implements OnInit {
+export class CoursesComponent{
 
   title = "list of Courses";
   imageUrl = "http://lorempixel.com/400/200";
-
-  ngOnInit(): void {
-  }
+  colSpan = 2;
 
 }
