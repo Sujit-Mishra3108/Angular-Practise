@@ -1,4 +1,4 @@
-import { templateJitUrl } from '@angular/compiler';
+import { CoursesService } from './courses.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -15,8 +15,12 @@ import { Component } from '@angular/core';
 })
 export class CourseComponent{
     title = "List of Courses";
-    // getTitle(){                          displaying using method of class
+    // getTitle(){                         // displaying using method of class
     //     return this.title;
     // }
-    courses = ["course1","course2","course3"];
+    courses: any;
+
+    constructor( service: CoursesService){       // loose dependency of type services and service will be created automatically
+        this.courses = service.getCourses();
+    }
 }
