@@ -18,12 +18,13 @@ export class CoursesComponent{
     //colSpan = 2;
     isActive = true;  // based on this value button will behave
 
+    onDivClicked($event: any){
+      console.log("Div was clicked", $event);
+    }
+
     onSave($event: any){
+      $event.stopPropagation();
       console.log("Button was clicked", $event);
     }
 
-    onDivClicked($event: any){
-      console.log("Div was clicked", $event);
-      
-    }
 }
