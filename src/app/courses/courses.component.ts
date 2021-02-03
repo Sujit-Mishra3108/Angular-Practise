@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
             <button [style.backgroundColor]="isActive ? 'lightblue': 'white'" >Style Binding</button> 
             <button (click)="onSave($event)">Event Binding</button>
             <hr/>
+            <input (keyUp.enter)="onKeyUp($event)">
             <input (keyUp.enter)="onKeyUp()">
           </div>`,
   // templateUrl: './courses.component.html',
@@ -20,8 +21,8 @@ export class CoursesComponent{
     //colSpan = 2;
     isActive = true;  // based on this value button will behave
 
-    onKeyUp(){
-       console.log("ENTER was pressed");
+    onKeyUp($event: any){
+       console.log($event.target.value);
     }
 
     onDivClicked($event: any){
